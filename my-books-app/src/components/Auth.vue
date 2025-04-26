@@ -10,8 +10,8 @@ const emit = defineEmits(['signed-in', 'signed-out'])
 function initClient() {
   gapi.load('client:auth2', () => {
     gapi.client.init({
-      apiKey: 'AIzaSyBjfnWVtRY5POPgp5GSM2wOMZxDMCSwl2A',
-      clientId: '672791505215-5hjli653lmos202u6on5gqkpcrhr6meh.apps.googleusercontent.com',
+      apiKey: import.meta.env.VUE_APP_GOOGLE_API_KEY,
+      clientId: import.meta.env.VUE_APP_CLIENT_ID,
       discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/books/v1/rest'],
       scope: 'https://www.googleapis.com/auth/books',
     }).then(() => {
